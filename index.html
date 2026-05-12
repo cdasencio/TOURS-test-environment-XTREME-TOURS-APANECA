@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xtreme Tours APANECA</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+    background:#020817;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    width:100%;
+    height:90px;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:999;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 50px;
+    background:rgba(3,8,20,.85);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo-btn{
+    background:linear-gradient(135deg,#0ea5ff,#0f172a);
+    padding:16px 34px;
+    border-radius:40px;
+    text-decoration:none;
+    color:white;
+    font-weight:700;
+    font-size:18px;
+    box-shadow:0 0 25px rgba(14,165,255,.45);
+}
+
+.menu{
+    display:flex;
+    gap:40px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:white;
+    font-size:14px;
+    letter-spacing:1px;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    width:100%;
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(2,8,23,.82),rgba(2,8,23,.94)),
+    url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1974&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:140px 20px 60px;
+}
+
+/* ================= MAIN BOX ================= */
+
+.main-box{
+    width:100%;
+    max-width:1300px;
+    background:rgba(7,15,30,.72);
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:35px;
+    padding:40px;
+    backdrop-filter:blur(14px);
+    box-shadow:0 20px 50px rgba(0,0,0,.5);
+}
+
+/* ================= TITLES ================= */
+
+.main-title{
+    text-align:center;
+    font-size:58px;
+    font-weight:700;
+    margin-bottom:12px;
+}
+
+.subtitle{
+    text-align:center;
+    font-size:20px;
+    color:#c0d5ea;
+    margin-bottom:40px;
+}
+
+/* ================= TOUR BUTTON ================= */
+
+.top-tour{
+    display:flex;
+    justify-content:flex-start;
+    margin-bottom:25px;
+}
+
+.tour-btn{
+    background:white;
+    border:none;
+    padding:16px 34px;
+    border-radius:40px;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+/* ================= BOOKING AREA ================= */
+
+.booking-bar{
+    width:100%;
+    display:grid;
+    grid-template-columns:
+    2fr
+    1fr
+    1fr
+    1fr
+    2fr
+    1.4fr;
+    gap:18px;
+    align-items:center;
+}
+
+/* ================= BOXES ================= */
+
+.box{
+    background:#071223;
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:22px;
+    padding:18px;
+    height:100px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    transition:.3s;
+}
+
+.box:hover{
+    border-color:#0ea5ff;
+}
+
+.box label{
+    font-size:12px;
+    color:#8ea7c2;
+    margin-bottom:10px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+.box select,
+.box input{
+    background:none;
+    border:none;
+    outline:none;
+    color:white;
+    font-size:18px;
+}
+
+/* ================= DATE ================= */
+
+.date-box{
+    align-items:center;
+    text-align:center;
+}
+
+.day{
+    font-size:48px;
+    font-weight:700;
+    color:#0ea5ff;
+    line-height:1;
+}
+
+.month{
+    margin-top:6px;
+    color:#a9bfd3;
+    font-size:14px;
+}
+
+/* ================= BUTTON ================= */
+
+.reserve-btn{
+    height:100px;
+    border:none;
+    border-radius:22px;
+    background:linear-gradient(135deg,#ff004c,#ff3b71);
+    color:white;
+    font-size:22px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.35s;
+    box-shadow:0 15px 35px rgba(255,0,76,.3);
+}
+
+.reserve-btn:hover{
+    transform:translateY(-4px);
+}
+
+/* ================= INFO PANELS ================= */
+
+.info-panels{
+    margin-top:50px;
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+/* ================= PANEL ================= */
+
+.panel{
+    width:100%;
+    height:110px;
+    background:rgba(10,20,35,.7);
+    border-radius:25px;
+    border:1px solid rgba(255,255,255,.06);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 35px;
+    transition:.3s;
+}
+
+.panel:hover{
+    transform:translateY(-4px);
+    border-color:#0ea5ff;
+}
+
+.left-panel{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.icon{
+    font-size:42px;
+    color:#0ea5ff;
+}
+
+.panel h2{
+    font-size:32px;
+    font-weight:600;
+}
+
+.arrow{
+    font-size:38px;
+    color:#0ea5ff;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1200px){
+
+    .booking-bar{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media(max-width:768px){
+
+    header{
+        padding:0 20px;
+    }
+
+    .menu{
+        gap:15px;
+    }
+
+    .main-title{
+        font-size:34px;
+    }
+
+    .subtitle{
+        font-size:16px;
+    }
+
+    .main-box{
+        padding:25px;
+    }
+
+    .booking-bar{
+        grid-template-columns:1fr;
+    }
+
+    .panel h2{
+        font-size:22px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <a href="#" class="logo-btn">INICIO</a>
+
+    <div class="menu">
+        <a href="#">CONTÁCTANOS</a>
+        <a href="#">🌐 IDIOMA ▼</a>
+    </div>
+
+</header>
+
+<section class="hero">
+
+    <div class="main-box">
+
+        <h1 class="main-title">
+            Xtreme Tours Ratatouille APANECA
+        </h1>
+
+        <p class="subtitle">
+            Programar un tour
+        </p>
+
+        <div class="top-tour">
+            <button class="tour-btn">
+                Programar un tour
+            </button>
+        </div>
+
+        <!-- ================= BOOKING ================= -->
+
+        <div class="booking-bar">
+
+            <!-- DESTINO -->
+
+            <div class="box">
+
+                <label>Seleccionar un</label>
+
+                <select>
+                    <option>Destino</option>
+                    <option>Apaneca</option>
+                    <option>Ruta de las Flores</option>
+                    <option>Lago de Coatepeque</option>
+                </select>
+
+            </div>
+
+            <!-- FECHA -->
+
+            <div class="box date-box">
+
+                <div class="day">13</div>
+                <div class="month">MAY 2026</div>
+
+            </div>
+
+            <!-- HORA -->
+
+            <div class="box">
+
+                <label>Hora</label>
+
+                <input type="time" value="09:00">
+
+            </div>
+
+            <!-- PERSONAS -->
+
+            <div class="box">
+
+                <label>Personas</label>
+
+                <select>
+                    <option>2 Personas</option>
+                    <option>3 Personas</option>
+                    <option>4 Personas</option>
+                </select>
+
+            </div>
+
+            <!-- VEHICULO -->
+
+            <div class="box">
+
+                <label>Seleccionar un</label>
+
+                <select>
+                    <option>Vehículo</option>
+                    <option>ATV</option>
+                    <option>Buggy</option>
+                    <option>4x4</option>
+                </select>
+
+            </div>
+
+            <!-- BUTTON -->
+
+            <button class="reserve-btn">
+                RESERVAR
+            </button>
+
+        </div>
+
+        <!-- ================= DESTINOS ================= -->
+
+        <div class="content-section">
+
+            <h2 class="section-title">
+                DESTINOS
+            </h2>
+
+            <p class="section-text">
+                Explora los mejores lugares turísticos de Apaneca y vive aventuras inolvidables rodeado de naturaleza, montaña y experiencias extremas.
+            </p>
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop">
+
+                    <div class="card-content">
+
+                        <h3>Ruta de las Flores</h3>
+
+                        <p>
+                            Descubre paisajes increíbles y recorridos llenos de adrenalina.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop">
+
+                    <div class="card-content">
+
+                        <h3>Lago de Coatepeque</h3>
+
+                        <p>
+                            Vive experiencias acuáticas y aventuras premium.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ================= TOURS ================= -->
+
+        <div class="content-section">
+
+            <h2 class="section-title">
+                TOURS Y EXPERIENCIAS
+            </h2>
+
+            <p class="section-text">
+                Disfruta de recorridos diseñados para turistas nacionales e internacionales con experiencias únicas, vehículos extremos y actividades premium.
+            </p>
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <img src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?q=80&w=1200&auto=format&fit=crop">
+
+                    <div class="card-content">
+
+                        <h3>Tour Extremo</h3>
+
+                        <p>
+                            Aventura total en rutas montañosas y caminos extremos.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop">
+
+                    <div class="card-content">
+
+                        <h3>Tour Premium</h3>
+
+                        <p>
+                            Experiencias VIP con atención personalizada y máxima comodidad.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
