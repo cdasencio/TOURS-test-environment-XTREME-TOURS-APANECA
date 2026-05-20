@@ -6,333 +6,419 @@
 
 <title>Xtreme Tours APANECA</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:'Montserrat',sans-serif;
-    background:#020817;
-    color:white;
-    overflow-x:hidden;
-}
-
-/* ================= BACKGROUND ================= */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;background:#020817;color:white;overflow-x:hidden}
 
 body::before{
     content:"";
     position:fixed;
     inset:0;
-    z-index:-1;
-
+    z-index:-2;
     background:
-    linear-gradient(rgba(2,8,23,.88),rgba(2,8,23,.94)),
-    url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2070&auto=format&fit=crop');
-
+    linear-gradient(rgba(2,8,23,.80),rgba(2,8,23,.96)),
+    url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2000&auto=format&fit=crop');
     background-size:cover;
     background-position:center;
 }
 
-/* ================= HEADER ================= */
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    background:
+    radial-gradient(circle at top left,rgba(14,165,255,.18),transparent 35%),
+    radial-gradient(circle at bottom right,rgba(255,0,76,.12),transparent 35%);
+}
+
+.promo-bar{
+    background:#ff0059;
+    color:white;
+    text-align:center;
+    padding:16px 20px;
+    font-size:18px;
+    font-weight:800;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+.location-bar{
+    background:#ffd000;
+    color:#111827;
+    text-align:center;
+    padding:10px 20px;
+    font-size:14px;
+    font-weight:700;
+}
 
 header{
     width:100%;
-    height:90px;
-
-    position:fixed;
+    position:sticky;
     top:0;
-    left:0;
-    z-index:999;
-
+    z-index:100;
+    background:rgba(3,8,20,.88);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(255,255,255,.08);
     display:flex;
     justify-content:space-between;
     align-items:center;
-
-    padding:0 50px;
-
-    background:rgba(3,8,20,.85);
-
-    backdrop-filter:blur(12px);
-
-    border-bottom:1px solid rgba(255,255,255,.08);
+    padding:22px 55px;
 }
 
 .logo-btn{
     background:linear-gradient(135deg,#0ea5ff,#0f172a);
-
-    padding:16px 34px;
-
+    padding:14px 26px;
     border-radius:40px;
-
-    text-decoration:none;
-
     color:white;
-
-    font-weight:700;
-
-    font-size:18px;
-
-    box-shadow:0 0 25px rgba(14,165,255,.45);
-}
-
-.menu{
-    display:flex;
-    gap:40px;
-}
-
-.menu a{
     text-decoration:none;
-    color:white;
     font-size:14px;
-    letter-spacing:1px;
+    font-weight:800;
+    box-shadow:0 0 25px rgba(14,165,255,.35);
 }
 
-/* ================= HERO ================= */
+.nav{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.nav a{color:white;text-decoration:none;font-size:14px;font-weight:700}
+.nav a:hover{color:#38bdf8}
+
+.language-select{
+    background:#071b2e;
+    color:white;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:24px;
+    padding:10px 14px;
+    font-family:'Montserrat',sans-serif;
+    font-weight:700;
+    outline:none;
+    cursor:pointer;
+}
+
+.language-select option{background:#071b2e;color:white}
+
+.whatsapp-btn{
+    background:#22c55e;
+    color:white!important;
+    padding:10px 18px;
+    border-radius:24px;
+    font-weight:800;
+}
 
 .hero{
-    width:100%;
-    min-height:100vh;
-
+    min-height:560px;
     display:flex;
-    justify-content:center;
     align-items:center;
-
-    padding:140px 20px 60px;
-}
-
-/* ================= MAIN BOX ================= */
-
-.main-box{
-    width:100%;
-    max-width:1400px;
-
-    background:rgba(7,15,30,.72);
-
-    border:1px solid rgba(255,255,255,.06);
-
-    border-radius:35px;
-
-    padding:40px;
-
-    backdrop-filter:blur(14px);
-
-    box-shadow:0 20px 50px rgba(0,0,0,.5);
-}
-
-/* ================= TITLES ================= */
-
-.main-title{
-    text-align:center;
-
-    font-size:clamp(32px,5vw,58px);
-
-    font-weight:700;
-
-    margin-bottom:12px;
-}
-
-.subtitle{
-    text-align:center;
-
-    font-size:clamp(16px,2vw,20px);
-
-    color:#c0d5ea;
-
-    margin-bottom:40px;
-}
-
-/* ================= TOUR BUTTON ================= */
-
-.top-tour{
-    display:flex;
-    justify-content:flex-start;
-
-    margin-bottom:25px;
-}
-
-.tour-btn{
-    background:white;
-
-    border:none;
-
-    padding:16px 34px;
-
-    border-radius:40px;
-
-    font-size:18px;
-
-    font-weight:600;
-
-    cursor:pointer;
-}
-
-/* ================= BOOKING AREA ================= */
-
-.booking-bar{
-    width:100%;
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(5,minmax(160px,1fr))
-    220px;
-
-    gap:18px;
-
-    align-items:center;
-
-    margin-bottom:50px;
-}
-
-/* ================= BOX ================= */
-
-.box{
-    background:#071223;
-
-    border:1px solid rgba(255,255,255,.06);
-
-    border-radius:22px;
-
-    padding:18px;
-
-    min-height:100px;
-
-    display:flex;
-    flex-direction:column;
     justify-content:center;
+    text-align:center;
+    padding:90px 20px 170px;
 }
 
-.box label{
-    font-size:12px;
+.hero-content{max-width:1000px}
 
-    color:#8ea7c2;
-
-    margin-bottom:10px;
-
+.hero-badge{
+    display:inline-block;
+    background:rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.14);
+    padding:10px 22px;
+    border-radius:30px;
+    margin-bottom:24px;
+    font-size:13px;
+    font-weight:800;
     letter-spacing:1px;
-
-    text-transform:uppercase;
 }
 
-.box select,
-.box input{
-    background:none;
+.hero h1{
+    font-size:clamp(42px,6vw,78px);
+    font-weight:800;
+    line-height:1.05;
+    text-shadow:0 10px 30px rgba(0,0,0,.4);
+}
 
-    border:none;
+.hero p{
+    margin-top:22px;
+    font-size:clamp(18px,2vw,24px);
+    color:#d7e7f4;
+}
 
-    outline:none;
+.booking-wrapper{
+    max-width:1280px;
+    margin:-110px auto 0;
+    padding:0 20px;
+    position:relative;
+    z-index:10;
+}
 
+.booking-top{display:flex;margin-left:30px}
+
+.booking-tab{
+    background:#071b2e;
     color:white;
-
-    font-size:18px;
-
-    width:100%;
-}
-
-/* ================= DATE ================= */
-
-.date-box{
-    align-items:center;
-    text-align:center;
-}
-
-.day{
-    font-size:48px;
-    font-weight:700;
-    color:#0ea5ff;
-    line-height:1;
-}
-
-.month{
-    margin-top:6px;
-    color:#a9bfd3;
+    border:none;
+    padding:16px 28px;
+    border-radius:18px 18px 0 0;
     font-size:14px;
+    font-weight:800;
+    letter-spacing:1px;
 }
 
-/* ================= BUTTON ================= */
+.booking-panel{
+    background:linear-gradient(145deg,rgba(7,15,30,.98),rgba(3,10,22,.98));
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:36px;
+    padding:34px;
+    box-shadow:0 25px 55px rgba(0,0,0,.45);
+}
+
+.booking-title{
+    font-size:30px;
+    font-weight:800;
+    margin-bottom:28px;
+}
+
+.tour-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:26px;
+}
+
+.tour-card{
+    background:#081728;
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:30px;
+    padding:28px;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+.tour-header{
+    margin-bottom:24px;
+    padding-bottom:20px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.tour-header h3{
+    font-size:30px;
+    font-weight:800;
+    margin-bottom:10px;
+}
+
+.tour-header p{
+    color:#b8cadb;
+    line-height:1.7;
+    font-size:15px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+}
+
+.field{
+    background:#071223;
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:18px;
+    padding:16px;
+}
+
+.field.full{grid-column:1/-1}
+
+.field label{
+    display:block;
+    color:#8ea7c2;
+    font-size:12px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.8px;
+    margin-bottom:10px;
+}
+
+.field input,
+.field select{
+    width:100%;
+    background:none;
+    border:none;
+    outline:none;
+    color:white;
+    font-size:16px;
+    font-family:'Montserrat',sans-serif;
+}
+
+.field input::placeholder{color:#6f8396}
+.field select option{background:#071223;color:white}
+
+input[type="date"],
+input[type="time"]{color-scheme:dark}
+
+.vehicles-box{
+    margin-top:22px;
+    background:#071223;
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:24px;
+    padding:22px;
+}
+
+.vehicles-title{
+    color:#8ea7c2;
+    font-size:13px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.7px;
+    margin-bottom:16px;
+}
+
+.vehicle-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+}
+
+.vehicle-row{
+    background:#081728;
+    border:1px solid rgba(255,255,255,.05);
+    border-radius:18px;
+    padding:15px;
+    display:grid;
+    grid-template-columns:1fr 100px;
+    gap:12px;
+    align-items:center;
+}
+
+.vehicle-name strong{
+    display:block;
+    font-size:15px;
+    margin-bottom:5px;
+}
+
+.vehicle-name small{
+    color:#8ea7c2;
+    font-size:12px;
+}
+
+.vehicle-row select{
+    width:100%;
+    background:#020817;
+    color:white;
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:12px;
+    padding:10px;
+    font-family:'Montserrat',sans-serif;
+}
+
+.vehicle-row select option{background:#020817;color:white}
+
+.client-info{
+    margin-top:20px;
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:16px;
+}
 
 .reserve-btn{
-    min-height:100px;
-
+    width:100%;
+    min-height:68px;
+    margin-top:24px;
     border:none;
-
     border-radius:22px;
-
-    background:linear-gradient(135deg,#ff004c,#ff3b71);
-
+    background:linear-gradient(135deg,#ff0059,#ff3b71);
     color:white;
-
-    font-size:22px;
-
-    font-weight:700;
-
+    font-size:18px;
+    font-weight:800;
+    letter-spacing:1px;
     cursor:pointer;
-
-    box-shadow:0 15px 35px rgba(255,0,76,.3);
+    transition:.3s;
+    box-shadow:0 18px 35px rgba(255,0,89,.30);
 }
 
-/* ================= CONTENT ================= */
+.reserve-btn:hover{transform:translateY(-3px)}
+
+.feature-strip{
+    max-width:1280px;
+    margin:60px auto 0;
+    padding:0 20px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.feature{
+    background:linear-gradient(145deg,rgba(7,15,30,.96),rgba(3,10,22,.98));
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:26px;
+    padding:26px;
+}
+
+.feature span{font-size:34px}
+.feature h3{margin-top:14px;font-size:22px}
+.feature p{margin-top:10px;color:#b8cadb;line-height:1.7;font-size:14px}
+
+.section-nav{
+    margin-top:70px;
+    background:#071b2e;
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    padding:18px;
+    flex-wrap:wrap;
+}
+
+.section-nav a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:800;
+    padding:12px 22px;
+    border-radius:24px;
+    transition:.3s;
+}
+
+.section-nav a:hover,
+.section-nav a.active{
+    background:white;
+    color:#071b2e;
+}
+
+.content{
+    max-width:1280px;
+    margin:auto;
+    padding:60px 20px;
+}
 
 .content-section{
-    width:100%;
-
-    background:rgba(10,20,35,.7);
-
+    background:linear-gradient(145deg,rgba(7,15,30,.96),rgba(3,10,22,.98));
+    border:1px solid rgba(255,255,255,.07);
     border-radius:30px;
-
-    border:1px solid rgba(255,255,255,.06);
-
-    padding:35px;
-
-    margin-bottom:30px;
+    padding:38px;
+    margin-bottom:34px;
 }
 
 .section-title{
-    font-size:clamp(26px,4vw,38px);
-
-    margin-bottom:20px;
-
-    border-left:5px solid #0ea5ff;
-
-    padding-left:18px;
+    font-size:42px;
+    margin-bottom:18px;
 }
 
 .section-text{
     color:#b8cadb;
-
-    font-size:16px;
-
     line-height:1.8;
-
-    margin-bottom:30px;
 }
 
-/* ================= CARDS ================= */
-
 .cards{
+    margin-top:30px;
     display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(260px,1fr));
-
-    gap:25px;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:24px;
 }
 
 .card{
     background:#081728;
-
+    border:1px solid rgba(255,255,255,.06);
     border-radius:24px;
-
     overflow:hidden;
-
-    border:1px solid rgba(255,255,255,.05);
+    transition:.3s;
 }
+
+.card:hover{transform:translateY(-5px)}
 
 .card img{
     width:100%;
@@ -340,363 +426,487 @@ header{
     object-fit:cover;
 }
 
-.card-content{
-    padding:22px;
-}
+.card-content{padding:22px}
+.card-content h3{font-size:24px;margin-bottom:10px}
+.card-content p{color:#b8cadb;line-height:1.7;font-size:15px}
 
-.card-content h3{
-    font-size:24px;
-    margin-bottom:10px;
-}
-
-.card-content p{
-    color:#afc1d2;
+.footer{
+    background:#020817;
+    border-top:1px solid rgba(255,255,255,.08);
+    padding:30px 20px;
+    text-align:center;
+    color:#8ea7c2;
+    font-size:13px;
     line-height:1.7;
-    font-size:15px;
 }
 
-/* ================= RESPONSIVE ================= */
-
-@media(max-width:1200px){
-
-    .booking-bar{
-        grid-template-columns:1fr 1fr;
-    }
-
+.whatsapp-float{
+    position:fixed;
+    right:24px;
+    bottom:24px;
+    width:64px;
+    height:64px;
+    border-radius:50%;
+    background:#22c55e;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    font-size:34px;
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+    z-index:200;
 }
 
-@media(max-width:768px){
-
-    header{
-        height:auto;
-
-        padding:18px;
-
-        flex-direction:column;
-
-        gap:18px;
-    }
-
-    .menu{
-        width:100%;
-
-        justify-content:center;
-
-        gap:20px;
-
-        flex-wrap:wrap;
-    }
-
-    .hero{
-        padding:
-        170px
-        15px
-        50px;
-    }
-
-    .main-box{
-        padding:22px;
-    }
-
-    .top-tour{
-        justify-content:center;
-    }
-
-    .tour-btn{
-        width:100%;
-    }
-
-    .booking-bar{
-        grid-template-columns:1fr;
-    }
-
-    .reserve-btn{
-        min-height:85px;
-
-        font-size:18px;
-    }
-
-    .content-section{
-        padding:22px;
-    }
-
-    .cards{
-        grid-template-columns:1fr;
-    }
-
-    .card img{
-        height:190px;
-    }
-
+@media(max-width:1100px){
+    .tour-grid,
+    .feature-strip{grid-template-columns:1fr}
+    .client-info{grid-template-columns:1fr}
 }
 
-@media(max-width:480px){
-
-    .logo-btn{
-        width:100%;
-        text-align:center;
-    }
-
-    .menu{
-        justify-content:space-between;
-        gap:10px;
-    }
-
-    .menu a{
-        font-size:11px;
-    }
-
-    .main-title{
-        font-size:26px;
-    }
-
+@media(max-width:850px){
+    header{flex-direction:column;gap:18px;padding:22px}
+    .nav{justify-content:center}
+    .form-grid,
+    .vehicle-list{grid-template-columns:1fr}
+    .booking-wrapper{margin-top:-80px}
 }
 
+@media(max-width:520px){
+    .promo-bar{font-size:14px}
+    .logo-btn{width:100%;text-align:center}
+    .booking-panel{padding:20px;border-radius:28px}
+    .tour-card{padding:20px}
+    .vehicle-row{grid-template-columns:1fr}
+    .section-title{font-size:30px}
+}
 </style>
 </head>
 
 <body>
 
+<div class="promo-bar">
+    OFERTAS DE AVENTURA: RESERVA TU TOUR EN APANECA
+</div>
+
+<div class="location-bar">
+    ¿Visitando desde El Salvador o el extranjero? Reserva tu experiencia personalizada
+</div>
+
 <header>
+    <a href="#" class="logo-btn">INICIO</a>
 
-    <a href="#" class="logo-btn">
-        INICIO
-    </a>
+    <nav class="nav">
+        <a href="#reservas">Reservar</a>
+        <a href="#destinos">Destinos</a>
+        <a href="#precios">Precios</a>
+        <a href="#recomendaciones">Recomendaciones</a>
+        <a href="#boutique">Boutique</a>
 
-    <div class="menu">
+        <select class="language-select">
+            <option>🌐 Español</option>
+            <option>🌐 English</option>
+        </select>
 
-        <a href="#">
-            CONTÁCTANOS
-        </a>
-
-        <a href="#">
-            🌐 IDIOMA ▼
-        </a>
-
-    </div>
-
+        <a href="https://wa.me/" class="whatsapp-btn">WhatsApp</a>
+    </nav>
 </header>
 
 <section class="hero">
+    <div class="hero-content">
+        <div class="hero-badge">RUTA DE LAS FLORES · APANECA</div>
 
-    <div class="main-box">
+        <h1>Xtreme Tours Ratatouille APANECA</h1>
 
-        <h1 class="main-title">
-            Xtreme Tours Ratatouille APANECA
-        </h1>
-
-        <p class="subtitle">
-            Programa tu próxima aventura extrema
+        <p>
+            Aventuras extremas, naturaleza y experiencias premium en uno de los destinos más increíbles de El Salvador.
         </p>
+    </div>
+</section>
 
-        <!-- BUTTON -->
+<section class="booking-wrapper" id="reservas">
 
-        <div class="top-tour">
+    <div class="booking-top">
+        <button class="booking-tab">TOURS</button>
+    </div>
 
-            <button class="tour-btn">
-                🗓️ Programar un tour
-            </button>
+    <div class="booking-panel">
 
-        </div>
+        <h2 class="booking-title">
+            Reserve de acuerdo a su destino
+        </h2>
 
-        <!-- ================= BOOKING ================= -->
+        <div class="tour-grid">
 
-        <div class="booking-bar">
+            <form class="tour-card" action="mailto:TU_CORREO@gmail.com" method="post" enctype="text/plain">
 
-            <!-- DESTINO -->
-
-            <div class="box">
-
-                <label>Seleccionar un</label>
-
-                <select>
-                    <option>Destino</option>
-                    <option>Apaneca</option>
-                    <option>Ruta de las Flores</option>
-                    <option>Lago de Coatepeque</option>
-                </select>
-
-            </div>
-
-            <!-- FECHA -->
-
-            <div class="box date-box">
-
-                <div class="day">
-                    13
+                <div class="tour-header">
+                    <h3>🌿 Tour Verde</h3>
+                    <p>Recorrido hacia la Laguna Verde.</p>
                 </div>
 
-                <div class="month">
-                    MAY 2026
-                </div>
+                <input type="hidden" name="Tour" value="Tour Verde - Recorrido hacia la Laguna Verde">
 
-            </div>
-
-            <!-- HORA -->
-
-            <div class="box">
-
-                <label>Hora</label>
-
-                <input type="time" value="09:00">
-
-            </div>
-
-            <!-- PERSONAS -->
-
-            <div class="box">
-
-                <label>Personas</label>
-
-                <select>
-                    <option>2 Personas</option>
-                    <option>3 Personas</option>
-                    <option>4 Personas</option>
-                </select>
-
-            </div>
-
-            <!-- VEHICULO -->
-
-            <div class="box">
-
-                <label>Seleccionar un</label>
-
-                <select>
-                    <option>Vehículo</option>
-                    <option>ATV</option>
-                    <option>Buggy</option>
-                    <option>4x4</option>
-                </select>
-
-            </div>
-
-            <!-- RESERVAR -->
-
-            <button class="reserve-btn">
-                RESERVAR
-            </button>
-
-        </div>
-
-        <!-- ================= DESTINOS ================= -->
-
-        <div class="content-section">
-
-            <h2 class="section-title">
-                DESTINOS
-            </h2>
-
-            <p class="section-text">
-
-                Explora los mejores lugares turísticos de Apaneca
-                y vive aventuras inolvidables rodeado de naturaleza,
-                montaña y experiencias extremas.
-
-            </p>
-
-            <div class="cards">
-
-                <div class="card">
-
-                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop">
-
-                    <div class="card-content">
-
-                        <h3>
-                            Ruta de las Flores
-                        </h3>
-
-                        <p>
-                            Descubre paisajes increíbles y recorridos llenos de adrenalina.
-                        </p>
-
+                <div class="form-grid">
+                    <div class="field">
+                        <label>Fecha</label>
+                        <input type="date" name="Fecha" required>
                     </div>
 
-                </div>
-
-                <div class="card">
-
-                    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop">
-
-                    <div class="card-content">
-
-                        <h3>
-                            Lago de Coatepeque
-                        </h3>
-
-                        <p>
-                            Vive experiencias acuáticas y aventuras premium.
-                        </p>
-
+                    <div class="field">
+                        <label>Hora</label>
+                        <input type="time" name="Hora" required>
                     </div>
 
+                    <div class="field full">
+                        <label>Personas</label>
+                        <select name="Personas" required>
+                            <option value="">Seleccionar personas</option>
+                            <option>1 Persona</option><option>2 Personas</option><option>3 Personas</option>
+                            <option>4 Personas</option><option>5 Personas</option><option>6 Personas</option>
+                            <option>7 Personas</option><option>8 Personas</option><option>9 Personas</option>
+                            <option>10 Personas</option><option>11 Personas</option><option>12 Personas</option>
+                            <option>13 Personas</option><option>14 Personas</option><option>15 Personas</option>
+                            <option>16 Personas</option><option>17 Personas</option><option>18 Personas</option>
+                            <option>19 Personas</option><option>20 Personas</option><option>21 Personas</option>
+                            <option>22 Personas</option><option>23 Personas</option><option>24 Personas</option>
+                            <option>25 Personas</option><option>26 Personas</option><option>27 Personas</option>
+                            <option>28 Personas</option><option>29 Personas</option><option>30 Personas</option>
+                        </select>
+                    </div>
                 </div>
 
-            </div>
+                <div class="vehicles-box">
+                    <div class="vehicles-title">Vehículos y unidades</div>
 
-        </div>
+                    <div class="vehicle-list">
+                        <div class="vehicle-row">
+                            <div class="vehicle-name">
+                                <strong>Buggy</strong>
+                                <small>Con capacidad de: 6 personas</small>
+                            </div>
+                            <select name="Buggy6_Unidades">
+                                <option value="">Unidades</option>
+                                <option>1</option><option>2</option><option>3</option><option>4</option>
+                            </select>
+                        </div>
 
-        <!-- ================= TOURS ================= -->
+                        <div class="vehicle-row">
+                            <div class="vehicle-name">
+                                <strong>Buggy</strong>
+                                <small>Con capacidad de: 4 personas</small>
+                            </div>
+                            <select name="Buggy4_Unidades">
+                                <option value="">Unidades</option>
+                                <option>1</option><option>2</option><option>3</option><option>4</option>
+                            </select>
+                        </div>
 
-        <div class="content-section">
+                        <div class="vehicle-row">
+                            <div class="vehicle-name">
+                                <strong>Buggy</strong>
+                                <small>Con capacidad de: 2 personas</small>
+                            </div>
+                            <select name="Buggy2_Unidades">
+                                <option value="">Unidades</option>
+                                <option>1</option><option>2</option><option>3</option><option>4</option>
+                            </select>
+                        </div>
 
-            <h2 class="section-title">
-                TOURS Y EXPERIENCIAS
-            </h2>
+                        <div class="vehicle-row">
+                            <div class="vehicle-name">
+                                <strong>Cuadrimoto</strong>
+                                <small>Con capacidad de: 2 personas</small>
+                            </div>
+                            <select name="Cuadrimoto_Unidades">
+                                <option value="">Unidades</option>
+                                <option>1</option><option>2</option><option>3</option><option>4</option>
+                                <option>5</option><option>6</option><option>7</option><option>8</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
 
-            <p class="section-text">
-
-                Disfruta de recorridos diseñados para turistas nacionales
-                e internacionales con experiencias únicas y actividades premium.
-
-            </p>
-
-            <div class="cards">
-
-                <div class="card">
-
-                    <img src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?q=80&w=1200&auto=format&fit=crop">
-
-                    <div class="card-content">
-
-                        <h3>
-                            Tour Extremo
-                        </h3>
-
-                        <p>
-                            Aventura total en rutas montañosas y caminos extremos.
-                        </p>
-
+                <div class="client-info">
+                    <div class="field">
+                        <label>Nombre del responsable</label>
+                        <input type="text" name="Nombre" placeholder="Nombre completo" required>
                     </div>
 
-                </div>
-
-                <div class="card">
-
-                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop">
-
-                    <div class="card-content">
-
-                        <h3>
-                            Tour Premium
-                        </h3>
-
-                        <p>
-                            Experiencias VIP con atención personalizada y máxima comodidad.
-                        </p>
-
+                    <div class="field">
+                        <label>Número de teléfono</label>
+                        <input type="tel" name="Telefono" placeholder="Código país + número" required>
                     </div>
 
+                    <div class="field">
+                        <label>Correo electrónico</label>
+                        <input type="email" name="Correo" placeholder="correo@ejemplo.com" required>
+                    </div>
                 </div>
 
-            </div>
+                <button type="submit" class="reserve-btn">
+                    RESERVA AHORA
+                </button>
+
+            </form>
+
+            <form class="tour-card" action="mailto:TU_CORREO@gmail.com" method="post" enctype="text/plain">
+
+                <div class="tour-header">
+                    <h3>🔥 Tour Extremo</h3>
+                    <p>Hacia los Ausoles.</p>
+                </div>
+
+                <input type="hidden" name="Tour" value="Tour Extremo - Hacia los Ausoles">
+
+                <div class="form-grid">
+                    <div class="field">
+                        <label>Fecha</label>
+                        <input type="date" name="Fecha" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Hora</label>
+                        <input type="time" name="Hora" required>
+                    </div>
+
+                    <div class="field full">
+                        <label>Personas</label>
+                        <select name="Personas" required>
+                            <option value="">Seleccionar personas</option>
+                            <option>1 Persona</option><option>2 Personas</option><option>3 Personas</option>
+                            <option>4 Personas</option><option>5 Personas</option><option>6 Personas</option>
+                            <option>7 Personas</option><option>8 Personas</option><option>9 Personas</option>
+                            <option>10 Personas</option><option>11 Personas</option><option>12 Personas</option>
+                            <option>13 Personas</option><option>14 Personas</option><option>15 Personas</option>
+                            <option>16 Personas</option><option>17 Personas</option><option>18 Personas</option>
+                            <option>19 Personas</option><option>20 Personas</option><option>21 Personas</option>
+                            <option>22 Personas</option><option>23 Personas</option><option>24 Personas</option>
+                            <option>25 Personas</option><option>26 Personas</option><option>27 Personas</option>
+                            <option>28 Personas</option><option>29 Personas</option><option>30 Personas</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="vehicles-box">
+                    <div class="vehicles-title">Vehículos y unidades</div>
+
+                    <div class="vehicle-list">
+                        <div class="vehicle-row">
+                            <div class="vehicle-name">
+                                <strong>Buggy</strong>
+                                <small>Con capacidad de: 6 personas</small>
+                            </div>
+                            <select name="Buggy6_Unidades">
+                                <option value="">Unidades</option>
+                                <option>1</option><option>2</option><option>3</option><option>4</option>
+                            </select>
+                        </div>
+
+                        <div class="vehicle-row">
+                            <div class="vehicle-name">
+                                <strong>Buggy</strong>
+                                <small>Con capacidad de: 4 personas</small>
+                            </div>
+                            <select name="Buggy4_Unidades">
+                                <option value="">Unidades</option>
+                                <option>1</option><option>2</option><option>3</option><option>4</option>
+                            </select>
+                        </div>
+
+                        <div class="vehicle-row">
+                            <div class="vehicle-name">
+                                <strong>Buggy</strong>
+                                <small>Con capacidad de: 2 personas</small>
+                            </div>
+                            <select name="Buggy2_Unidades">
+                                <option value="">Unidades</option>
+                                <option>1</option><option>2</option><option>3</option><option>4</option>
+                            </select>
+                        </div>
+
+                        <div class="vehicle-row">
+                            <div class="vehicle-name">
+                                <strong>Cuadrimoto</strong>
+                                <small>Con capacidad de: 2 personas</small>
+                            </div>
+                            <select name="Cuadrimoto_Unidades">
+                                <option value="">Unidades</option>
+                                <option>1</option><option>2</option><option>3</option><option>4</option>
+                                <option>5</option><option>6</option><option>7</option><option>8</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="client-info">
+                    <div class="field">
+                        <label>Nombre del responsable</label>
+                        <input type="text" name="Nombre" placeholder="Nombre completo" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Número de teléfono</label>
+                        <input type="tel" name="Telefono" placeholder="Código país + número" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Correo electrónico</label>
+                        <input type="email" name="Correo" placeholder="correo@ejemplo.com" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="reserve-btn">
+                    RESERVA AHORA
+                </button>
+
+            </form>
 
         </div>
 
     </div>
 
 </section>
+
+<section class="feature-strip">
+
+    <div class="feature">
+        <span>🌄</span>
+        <h3>Rutas naturales</h3>
+        <p>Explora paisajes únicos entre montañas y naturaleza extrema.</p>
+    </div>
+
+    <div class="feature">
+        <span>🏁</span>
+        <h3>Experiencias premium</h3>
+        <p>Vive aventuras diseñadas para turistas nacionales e internacionales.</p>
+    </div>
+
+    <div class="feature">
+        <span>🌎</span>
+        <h3>Atención personalizada</h3>
+        <p>Reservas adaptadas a cada grupo y experiencia deseada.</p>
+    </div>
+
+</section>
+
+<nav class="section-nav">
+
+    <a href="#destinos" class="active">DESTINOS</a>
+    <a href="#tours">TOURS Y EXPERIENCIAS</a>
+    <a href="#precios">PRECIOS</a>
+    <a href="#recomendaciones">RECOMENDACIONES</a>
+    <a href="#boutique">BOUTIQUE</a>
+
+</nav>
+
+<main class="content">
+
+    <div class="content-section" id="destinos">
+        <h2 class="section-title">DESTINOS</h2>
+
+        <p class="section-text">
+            Explora los mejores lugares turísticos de Apaneca
+            y vive aventuras inolvidables rodeado de naturaleza,
+            montaña y experiencias extremas.
+        </p>
+
+        <div class="cards">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop">
+                <div class="card-content">
+                    <h3>Ruta de las Flores</h3>
+                    <p>Descubre paisajes increíbles y recorridos llenos de adrenalina.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop">
+                <div class="card-content">
+                    <h3>Lago de Coatepeque</h3>
+                    <p>Vive experiencias acuáticas y aventuras premium.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section" id="tours">
+        <h2 class="section-title">TOURS Y EXPERIENCIAS</h2>
+
+        <p class="section-text">
+            Disfruta de recorridos diseñados para turistas nacionales
+            e internacionales con experiencias únicas y actividades premium.
+        </p>
+
+        <div class="cards">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?q=80&w=1200&auto=format&fit=crop">
+                <div class="card-content">
+                    <h3>Tour Extremo</h3>
+                    <p>Aventura total en rutas montañosas y caminos extremos.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop">
+                <div class="card-content">
+                    <h3>Tour Premium</h3>
+                    <p>Experiencias VIP con atención personalizada y máxima comodidad.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section" id="precios">
+        <h2 class="section-title">PRECIOS</h2>
+        <p class="section-text">
+            Consulta nuestras tarifas según el tour, vehículos y cantidad de personas seleccionadas.
+        </p>
+    </div>
+
+    <div class="content-section" id="recomendaciones">
+        <h2 class="section-title">RECOMENDACIONES</h2>
+        <p class="section-text">
+            Llevar ropa cómoda, protector solar, lentes y reservar con anticipación para una mejor experiencia.
+        </p>
+    </div>
+
+    <div class="content-section" id="boutique">
+        <h2 class="section-title">BOUTIQUE</h2>
+
+        <p class="section-text">
+            Descubre artículos exclusivos, recuerdos premium y accesorios inspirados en la aventura y naturaleza de Apaneca.
+        </p>
+
+        <div class="cards">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=1200&auto=format&fit=crop">
+                <div class="card-content">
+                    <h3>Hoodies Xtreme</h3>
+                    <p>Diseños exclusivos inspirados en la Ruta de las Flores y tours extremos.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop">
+                <div class="card-content">
+                    <h3>Accesorios Adventure</h3>
+                    <p>Gorras, termos y artículos premium para acompañar tu experiencia.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<footer class="footer">
+    <p>© 2026 Xtreme Tours APANECA – Tours, Aventuras y Experiencias. Todos los derechos reservados.</p>
+    <p>Queda prohibida la reproducción total o parcial sin autorización.</p>
+</footer>
+
+<a href="https://wa.me/" class="whatsapp-float">
+    ☎
+</a>
 
 </body>
 </html>
