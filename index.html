@@ -16,9 +16,21 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradi
 a{color:inherit}
 .promo-bar{background:#ff0059;color:white;text-align:center;padding:16px 20px;font-size:18px;font-weight:900;letter-spacing:1px;text-transform:uppercase}
 .location-bar{background:#ffd000;color:#111827;text-align:center;padding:10px 20px;font-size:14px;font-weight:800}
-header{width:100%;position:sticky;top:0;z-index:100;background:rgba(3,8,20,.90);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;padding:18px 40px}
+header{width:100%;position:sticky;top:0;z-index:100;background:rgba(3,8,20,.90);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;padding:18px 40px;gap:18px}
+.header-left{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .logo-btn,.top-reserve-btn{background:linear-gradient(135deg,#0ea5ff,#0f172a);padding:14px 24px;border-radius:40px;color:white!important;text-decoration:none;font-size:14px;font-weight:900;letter-spacing:1px;white-space:nowrap;box-shadow:0 0 25px rgba(14,165,255,.35);transition:.3s;border:1px solid rgba(255,255,255,.08)}
 .logo-btn:hover,.top-reserve-btn:hover{transform:translateY(-2px);box-shadow:0 0 35px rgba(14,165,255,.55)}
+.contact-panel{display:flex;align-items:center;gap:18px;color:#d7e7f4;line-height:1.35}
+.contact-panel::before{content:"📞";color:white;font-size:22px;font-weight:900;line-height:1}
+.contact-numbers{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.contact-link{display:inline-flex;align-items:center;gap:7px;color:#d7e7f4;text-decoration:none;transition:.25s;white-space:nowrap}
+.contact-link::before{content:"";width:6px;height:6px;border-radius:50%;background:#8ea7c2;display:inline-block}
+.contact-link span{display:none}
+.contact-link strong{color:#eef8ff;font-size:14px;font-weight:900;letter-spacing:.8px}
+.contact-link:hover{color:white}
+.contact-link:hover strong{text-decoration:underline;text-underline-offset:4px}
+.contact-link.primary strong{color:#eef8ff;font-size:17px}
+.contact-link.primary::before{width:8px;height:8px;background:#22c55e;box-shadow:0 0 12px rgba(34,197,94,.45)}
 .nav{display:flex;align-items:center;gap:16px}
 .language-select{background:#071b2e;color:white;border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:10px 14px;font-family:'Montserrat',sans-serif;font-weight:800;outline:none;cursor:pointer}
 .language-select option{background:#071b2e;color:white}
@@ -63,9 +75,20 @@ input[type="date"],input[type="time"]{color-scheme:dark}
 .vehicle-name small{color:#8ea7c2;font-size:12px}
 .vehicle-row select{width:100%;background:#020817;color:white;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:10px;font-family:'Montserrat',sans-serif}
 .client-info{margin-top:20px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.translator-box{margin-top:20px;background:linear-gradient(135deg,rgba(255,208,0,.10),rgba(14,165,255,.08));border:1px solid rgba(255,208,0,.28);border-radius:24px;padding:22px}
+.translator-title{color:#ffd000;font-size:15px;font-weight:900;text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px}
+.translator-copy{color:#d7e7f4;line-height:1.7;font-size:14px;margin-bottom:16px}
 .summary-box{margin-top:20px;border-radius:22px;background:rgba(14,165,255,.08);border:1px solid rgba(14,165,255,.22);padding:18px;display:grid;grid-template-columns:1fr 1fr;gap:12px;color:#d7e7f4}
 .summary-box strong{color:white}
+.summary-heading{grid-column:1/-1;color:white;font-size:16px;font-weight:900;text-transform:uppercase;letter-spacing:.8px}
+.order-summary-list{grid-column:1/-1;list-style:none;display:grid;gap:8px;margin:2px 0 4px}
+.order-summary-list li{display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:8px;color:#b8cadb;font-size:13px;line-height:1.45}
+.order-summary-list li:last-child{border-bottom:none;padding-bottom:0}
+.order-summary-list span:first-child{font-weight:900;color:#8ea7c2;text-transform:uppercase;letter-spacing:.6px}
+.order-summary-list span:last-child{text-align:right;color:#eef8ff;font-weight:800}
 .summary-note{grid-column:1/-1;color:#b8cadb;font-size:13px;line-height:1.6}
+.summary-total{grid-column:1/-1;margin-top:4px;padding-top:14px;border-top:1px solid rgba(255,255,255,.10);font-size:18px;font-weight:900;color:white}
+.summary-total strong{color:#ffd000;font-size:24px}
 .summary-warning{grid-column:1/-1;color:#ffd000;font-size:13px;font-weight:800;display:none}
 .summary-warning.is-visible{display:block}
 .reserve-btn{width:100%;min-height:68px;margin-top:24px;border:none;border-radius:22px;background:linear-gradient(135deg,#ff0059,#ff3b71);color:white;font-size:18px;font-weight:900;letter-spacing:1px;cursor:pointer;transition:.3s;box-shadow:0 18px 35px rgba(255,0,89,.30)}
@@ -105,7 +128,7 @@ input[type="date"],input[type="time"]{color-scheme:dark}
 .whatsapp-float{position:fixed;right:24px;bottom:24px;width:64px;height:64px;border-radius:50%;background:#22c55e;color:white;display:flex;justify-content:center;align-items:center;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.35);z-index:200}
 .whatsapp-float svg{width:34px;height:34px}
 @media(max-width:1100px){.tour-grid,.feature-strip{grid-template-columns:1fr}.client-info{grid-template-columns:1fr}.nav-center-bar{grid-template-columns:repeat(3,1fr);width:calc(100% - 32px);padding:18px}.image-gallery{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:850px){header{flex-direction:column;gap:18px;padding:22px}.nav{flex-wrap:wrap;justify-content:center}.form-grid,.vehicle-list,.summary-box{grid-template-columns:1fr}}
+@media(max-width:850px){header{flex-direction:column;gap:18px;padding:22px}.header-left,.contact-panel,.nav{justify-content:center}.nav{flex-wrap:wrap}.form-grid,.vehicle-list,.summary-box{grid-template-columns:1fr}}
 @media(max-width:560px){.nav-center-bar{grid-template-columns:1fr 1fr;border-radius:24px}.nav-center-bar a{font-size:13px;padding:14px 10px}.image-gallery{grid-template-columns:1fr}.image-gallery img,.restaurant-gallery img{height:230px}}
 @media(max-width:520px){.promo-bar{font-size:14px}.logo-btn{width:100%;text-align:center}.booking-panel{padding:20px}.tour-card{padding:20px}.vehicle-row{grid-template-columns:1fr}.section-title{font-size:30px}.hero h1{font-size:38px}.content-section{padding:26px}}
 
@@ -116,7 +139,13 @@ input[type="date"],input[type="time"]{color-scheme:dark}
   <div class="location-bar" data-i18n="location">¿Visitando desde El Salvador o el extranjero? Reserva tu experiencia personalizada</div>
 
   <header>
-    <a href="#" class="logo-btn" data-i18n="home">INICIO</a>
+    <div class="header-left">
+      <a href="#" class="logo-btn" data-i18n="home">INICIO</a>
+      <div class="contact-panel" aria-label="Números de contacto">
+        <a href="https://wa.me/50378830399" class="contact-link primary" target="_blank" rel="noopener"><span>Reservas</span><strong>+503 7883 0399</strong></a>
+        <a href="tel:+50372558194" class="contact-link"><span>Contacto</span><strong>+503 7255 8194</strong></a>
+      </div>
+    </div>
     <nav class="nav" aria-label="Navegación principal">
       <a href="#reservas" class="top-reserve-btn" data-i18n="reserve">RESERVAR</a>
       <select class="language-select" id="languageSelect" aria-label="Idioma">
@@ -281,8 +310,9 @@ input[type="date"],input[type="time"]{color-scheme:dark}
     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.601 2.326A7.854 7.854 0 0 0 8.003 0C3.58 0 0 3.58 0 8c0 1.408.367 2.783 1.066 3.998L0 16l4.148-1.084A7.963 7.963 0 0 0 8.003 16c4.423 0 8.003-3.58 8.003-8a7.95 7.95 0 0 0-2.405-5.674zM8.003 14.5a6.46 6.46 0 0 1-3.287-.894l-.236-.14-2.46.643.656-2.398-.154-.246A6.466 6.466 0 0 1 1.5 8c0-3.59 2.913-6.5 6.503-6.5 1.736 0 3.367.676 4.594 1.902A6.455 6.455 0 0 1 14.5 8c0 3.59-2.913 6.5-6.497 6.5zm3.58-4.855c-.196-.098-1.158-.572-1.337-.637-.18-.065-.31-.098-.44.098-.131.196-.506.637-.62.768-.114.131-.228.147-.424.049-.196-.098-.827-.305-1.576-.973-.583-.52-.977-1.163-1.091-1.359-.114-.196-.012-.302.086-.4.088-.087.196-.228.294-.343.098-.114.131-.196.196-.327.065-.131.033-.245-.016-.343-.049-.098-.44-1.06-.604-1.452-.16-.385-.323-.333-.44-.339-.114-.006-.245-.007-.376-.007-.131 0-.343.049-.522.245-.18.196-.686.67-.686 1.633s.702 1.895.8 2.026c.098.131 1.38 2.108 3.345 2.955.468.202.833.322 1.118.412.47.15.898.129 1.236.078.377-.056 1.158-.474 1.321-.932.163-.458.163-.85.114-.932-.049-.082-.18-.131-.376-.229z"/></svg>
   </a>
   <script>
-const WHATSAPP_NUMBER = "";
-const RESERVATION_EMAIL = "reservas@xtremetoursapaneca.com";
+const WHATSAPP_NUMBER = "50378830399";
+const RESERVATION_EMAIL = "ratatouillextremetours@gmail.com";
+const SECONDARY_PHONE = "7255 8194";
 
 const vehicleOptions = [
   { id: "atv1", esName: "Cuatrimoto sencilla", enName: "Single ATV", capacity: 1, maxUnits: 8, lagunaPrice: 30 },
@@ -312,15 +342,20 @@ const tours = [
     id: "ausoles",
     icon: "🌋",
     es: {
-      name: "Tour Ausoles",
+      name: "Ruta Extrema (Ausoles Tour)",
       description: "Tour lleno de aventura hacia los Ausoles de Ahuachapán. El precio es $100 por persona, ya sea en cuatrimoto o buggy."
     },
     en: {
-      name: "Ausoles Tour",
+      name: "Extreme Route (Ausoles Tour)",
       description: "Adventure route to the Ausoles of Ahuachapán. The price is $100 per person, whether by ATV or buggy."
     }
   }
 ];
+
+const translatorPrices = {
+  verde: 35,
+  ausoles: 60
+};
 
 const translations = {
   es: {
@@ -365,12 +400,29 @@ const translations = {
     phone: "Número de teléfono",
     phonePlaceholder: "Código país + número",
     email: "Correo electrónico",
+    requiredFields: "Campos obligatorios para generar la orden",
+    translatorTitle: "Traducción e interpretación disponible",
+    translatorQuestion: "Disfruta a lo largo de tu tour con servicio de traducción e interpretación disponible en inglés y/o francés por un traductor trilingüe y guía de la zona.",
+    translatorQuestionFinal: "Este es un servicio adicional disponible durante el tour, con el beneficio de contar con interpretación y acompañamiento local durante la experiencia.",
+    translatorOption: "¿Deseas incluir traducción e interpretación?",
+    translatorLanguages: "Inglés o francés",
+    translatorFinalCheck: "Todo el tour con traducción e interpretación disponible en inglés o francés por un traductor trilingüe y guía de la zona, por costo adicional.",
+    translatorFee: "Traducción e interpretación",
+    translatorNotSelected: "NO",
+    translatorSelected: "SÍ",
+    orderSummary: "Resumen de la orden",
+    orderTour: "Tour",
+    orderPeople: "Personas",
+    orderVehicles: "Vehículos",
+    orderCapacity: "Capacidad cubierta",
+    orderTranslation: "Traducción",
+    noVehiclesSelected: "Selecciona las unidades del vehículo para completar la orden",
     totalCapacity: "Capacidad total seleccionada",
     tourPrice: "Precio del tour",
     pricePending: "Por confirmar",
-    ausolesPersonPriceNote: "Tour Ausoles: $100 por persona.",
+    ausolesPersonPriceNote: "Ruta Extrema (Ausoles Tour): $100 por persona.",
     lagunaVehiclePriceNote: "Tour Laguna Verde: precio según vehículo seleccionado.",
-    nextStep: "Recibiremos tus datos por correo y luego enviaremos la confirmación junto con el link de pago.",
+    nextStep: "Recibiremos tus datos por correo en forma de orden y luego enviaremos la confirmación junto con el link de pago.",
     warning: "Selecciona vehículos suficientes para cubrir la cantidad de personas.",
     reserveNow: "COMENZAR A RESERVAR",
     featureRoutesTitle: "Rutas naturales",
@@ -387,7 +439,7 @@ const translations = {
     pricesTitle: "PRECIOS",
     pricesCopy: "Los precios de Laguna Verde y Ausoles son diferentes. En Laguna Verde el precio depende del vehículo y capacidad seleccionada. En Ausoles el precio es de $100 por persona, ya sea en cuatrimoto o buggy.",
     lagunaPriceTitle: "Tour Laguna Verde",
-    ausolesPriceTitle: "Tour Ausoles",
+    ausolesPriceTitle: "Ruta Extrema (Ausoles Tour)",
     lagunaPriceNote: "Tarifa independiente del tour Ausoles.",
     ausolesPriceNote: "Precio por persona, sea en cuatrimoto o buggy.",
     recommendationsTitle: "RECOMENDACIONES",
@@ -405,9 +457,10 @@ const translations = {
     copyright: "Queda prohibida la reproducción total o parcial sin autorización.",
     alertVehicle: "Selecciona al menos una unidad de vehículo.",
     alertCapacity: "La capacidad seleccionada no cubre la cantidad de personas.",
+    alertRequiredClient: "Completa nombre del responsable, número de teléfono y correo electrónico para generar la orden.",
     whatsappGreeting: "Hola, quiero información sobre Xtreme Tours APANECA.",
-    emailSubject: "Solicitud de reserva - Xtreme Tours APANECA",
-    emailGreeting: "Hola, quiero comenzar una reserva en Xtreme Tours APANECA."
+    emailSubject: "Orden de reserva - Ratatouille Xtreme Tours",
+    emailGreeting: "Nueva orden de reserva generada desde la página web."
   },
   en: {
     promo: "ADVENTURE DEALS: BOOK YOUR TOUR IN APANECA",
@@ -451,12 +504,29 @@ const translations = {
     phone: "Phone number",
     phonePlaceholder: "Country code + number",
     email: "Email",
+    requiredFields: "Required fields to generate the order",
+    translatorTitle: "Translation and interpretation available",
+    translatorQuestion: "Enjoy your tour with English and/or French translation and interpretation service available by a trilingual translator and local guide.",
+    translatorQuestionFinal: "This is an additional service available during the tour, with the benefit of interpretation and local guidance throughout the experience.",
+    translatorOption: "Would you like to include translation and interpretation?",
+    translatorLanguages: "English or French",
+    translatorFinalCheck: "Full tour with English or French translation and interpretation available by a trilingual translator and local guide, for an extra fee.",
+    translatorFee: "Translation and interpretation",
+    translatorNotSelected: "NO",
+    translatorSelected: "YES",
+    orderSummary: "Order summary",
+    orderTour: "Tour",
+    orderPeople: "People",
+    orderVehicles: "Vehicles",
+    orderCapacity: "Covered capacity",
+    orderTranslation: "Translation",
+    noVehiclesSelected: "Select vehicle units to complete the order",
     totalCapacity: "Selected total capacity",
     tourPrice: "Tour price",
     pricePending: "To be confirmed",
-    ausolesPersonPriceNote: "Ausoles Tour: $100 per person.",
+    ausolesPersonPriceNote: "Extreme Route (Ausoles Tour): $100 per person.",
     lagunaVehiclePriceNote: "Laguna Verde Tour: price based on selected vehicle.",
-    nextStep: "We will receive your details by email and then send confirmation with the payment link.",
+    nextStep: "We will receive your details by email as an order and then send confirmation with the payment link.",
     warning: "Select enough vehicles to cover the number of guests.",
     reserveNow: "START BOOKING",
     featureRoutesTitle: "Natural routes",
@@ -473,7 +543,7 @@ const translations = {
     pricesTitle: "PRICES",
     pricesCopy: "Laguna Verde and Ausoles have different prices. Laguna Verde pricing depends on the selected vehicle and capacity. Ausoles costs $100 per person, whether by ATV or buggy.",
     lagunaPriceTitle: "Laguna Verde Tour",
-    ausolesPriceTitle: "Ausoles Tour",
+    ausolesPriceTitle: "Extreme Route (Ausoles Tour)",
     lagunaPriceNote: "Separate rate from the Ausoles tour.",
     ausolesPriceNote: "Price per person, whether by ATV or buggy.",
     recommendationsTitle: "TIPS",
@@ -491,9 +561,10 @@ const translations = {
     copyright: "Total or partial reproduction without authorization is prohibited.",
     alertVehicle: "Select at least one vehicle unit.",
     alertCapacity: "The selected capacity does not cover the number of guests.",
+    alertRequiredClient: "Complete responsible guest name, phone number and email to generate the order.",
     whatsappGreeting: "Hello, I want information about Xtreme Tours APANECA.",
-    emailSubject: "Booking request - Xtreme Tours APANECA",
-    emailGreeting: "Hello, I want to start a booking at Xtreme Tours APANECA."
+    emailSubject: "Booking order - Ratatouille Xtreme Tours",
+    emailGreeting: "New booking order generated from the website."
   }
 };
 
@@ -519,8 +590,19 @@ function tourTotalPrice(tourId, selectedVehicles, people) {
   return selectedVehicles.reduce((total, vehicle) => total + vehicle.lagunaPrice * vehicle.units, 0);
 }
 
+function translatorPrice(tourId) {
+  return translatorPrices[tourId] || 0;
+}
+
 function formatPrice(value) {
   return `$${value}`;
+}
+
+function createOrderNumber() {
+  const now = new Date();
+  const datePart = now.toISOString().slice(0, 10).replaceAll("-", "");
+  const timePart = String(now.getHours()).padStart(2, "0") + String(now.getMinutes()).padStart(2, "0") + String(now.getSeconds()).padStart(2, "0");
+  return `RXT-${datePart}-${timePart}`;
 }
 
 function buildBookingCards() {
@@ -569,23 +651,36 @@ function buildBookingCards() {
         </div>
         <div class="client-info">
           <div class="field">
-            <label>${t("responsible")}</label>
+            <label>${t("responsible")} *</label>
             <input name="name" type="text" placeholder="${t("fullName")}" required>
           </div>
           <div class="field">
-            <label>${t("phone")}</label>
+            <label>${t("phone")} *</label>
             <input name="phone" type="tel" placeholder="${t("phonePlaceholder")}" required>
           </div>
           <div class="field">
-            <label>${t("email")}</label>
+            <label>${t("email")} *</label>
             <input name="email" type="email" placeholder="correo@ejemplo.com" required>
           </div>
         </div>
+        <div class="translator-box">
+          <div class="translator-title">${t("translatorTitle")}</div>
+          <p class="translator-copy">${t("translatorQuestion")}</p>
+          <p class="translator-copy">${t("translatorQuestionFinal")}</p>
+          <div class="field full">
+            <label>${t("translatorOption")}</label>
+            <select name="translator">
+              <option value="no" selected>${t("translatorNotSelected")} - $0</option>
+              <option value="yes">${t("translatorSelected")} - ${formatPrice(translatorPrice(tour.id))}</option>
+            </select>
+          </div>
+        </div>
         <div class="summary-box">
-          <span>${t("totalCapacity")}: <strong data-summary-capacity>0</strong></span>
-          <span>${t("estimatedTotal")}: <strong data-summary-price>$0</strong></span>
+          <div class="summary-heading">${t("orderSummary")}</div>
+          <ul class="order-summary-list" data-order-summary></ul>
           <p class="summary-note">${tour.id === "ausoles" ? t("ausolesPersonPriceNote") : t("lagunaVehiclePriceNote")}</p>
           <p class="summary-note">${t("nextStep")}</p>
+          <span class="summary-total">${t("estimatedTotal")}: <strong data-summary-price>$0</strong></span>
           <p class="summary-warning" data-summary-warning>${t("warning")}</p>
         </div>
         <button type="submit" class="reserve-btn">${t("reserveNow")}</button>
@@ -610,14 +705,75 @@ function getFormSummary(form) {
 
   const capacity = selectedVehicles.reduce((total, vehicle) => total + vehicle.capacity * vehicle.units, 0);
   const people = Number(form.elements.people.value || 0);
-  const totalPrice = tourTotalPrice(form.dataset.tourId, selectedVehicles, people);
+  const basePrice = tourTotalPrice(form.dataset.tourId, selectedVehicles, people);
+  const wantsTranslator = form.elements.translator.value === "yes";
+  const translatorFee = wantsTranslator ? translatorPrice(form.dataset.tourId) : 0;
+  const totalPrice = basePrice + translatorFee;
 
-  return { selectedVehicles, capacity, people, totalPrice };
+  return { selectedVehicles, capacity, people, basePrice, wantsTranslator, translatorFee, totalPrice };
+}
+
+function selectedVehicleText(summary, tourId) {
+  if (!summary.selectedVehicles.length) {
+    return t("noVehiclesSelected");
+  }
+
+  return summary.selectedVehicles.map((vehicle) => {
+    const priceText = tourId === "ausoles" ? "$100 por persona" : `${formatPrice(vehiclePrice(vehicle, tourId))} c/u`;
+    return `${vehicle.units} x ${vehicleName(vehicle)} (${vehicle.capacity} ${t("people").toLowerCase()}) - ${priceText}`;
+  }).join(" | ");
+}
+
+function translationSummaryText(summary) {
+  return summary.wantsTranslator
+    ? `${t("translatorSelected")} - ${t("translatorLanguages")} - ${formatPrice(summary.translatorFee)}`
+    : `${t("translatorNotSelected")} - $0`;
+}
+
+function getOrderSummaryRows(form, summary) {
+  const tour = tours.find((item) => item.id === form.dataset.tourId);
+
+  return [
+    [t("orderTour"), tour[currentLanguage].name],
+    [t("orderPeople"), summary.people ? String(summary.people) : t("selectPeople")],
+    [t("orderVehicles"), selectedVehicleText(summary, form.dataset.tourId)],
+    [t("orderCapacity"), `${summary.capacity} ${t("people").toLowerCase()}`],
+    [t("orderTranslation"), translationSummaryText(summary)]
+  ];
+}
+
+function getOrderSummaryText(form, summary) {
+  return getOrderSummaryRows(form, summary)
+    .map(([label, value]) => `${label}: ${value}`)
+    .join("\n");
+}
+
+function getVehicleOrderDetails(form) {
+  const selectedLines = vehicleOptions.map((vehicle) => {
+    const units = Number(form.elements[vehicle.id].value || 0);
+    if (!units) return "";
+    const priceText = form.dataset.tourId === "ausoles" ? "$100 por persona" : `${formatPrice(vehiclePrice(vehicle, form.dataset.tourId))} c/u`;
+    return [
+      `${vehicleName(vehicle)}`,
+      `${t("vehicleCapacity")}: ${vehicle.capacity} ${t("people").toLowerCase()}`,
+      `${t("units")}: ${units}`,
+      `Precio: ${priceText}`
+    ].join(" | ");
+  }).filter(Boolean);
+
+  return selectedLines.length ? selectedLines.join("\n") : t("noVehiclesSelected");
+}
+
+function fieldValue(value, fallback) {
+  return value && String(value).trim() ? String(value).trim() : fallback;
 }
 
 function updateSummary(form) {
   const summary = getFormSummary(form);
-  form.querySelector("[data-summary-capacity]").textContent = summary.capacity;
+  const orderList = form.querySelector("[data-order-summary]");
+  orderList.innerHTML = getOrderSummaryRows(form, summary)
+    .map(([label, value]) => `<li><span>${label}</span><span>${value}</span></li>`)
+    .join("");
   form.querySelector("[data-summary-price]").textContent = formatPrice(summary.totalPrice);
   form.querySelector("[data-summary-warning]").classList.toggle("is-visible", summary.people > 0 && summary.capacity < summary.people);
 }
@@ -625,6 +781,11 @@ function updateSummary(form) {
 function handleBookingSubmit(event) {
   event.preventDefault();
   const form = event.currentTarget;
+
+  if (!form.reportValidity()) {
+    return;
+  }
+
   const summary = getFormSummary(form);
 
   if (!summary.selectedVehicles.length) {
@@ -638,35 +799,50 @@ function handleBookingSubmit(event) {
   }
 
   const tour = tours.find((item) => item.id === form.dataset.tourId);
-  const vehicleLines = summary.selectedVehicles
-    .map((vehicle) => {
-      const priceText = form.dataset.tourId === "ausoles" ? "$100 por persona" : `${formatPrice(vehiclePrice(vehicle, form.dataset.tourId))} c/u`;
-      return `- ${vehicle.units} x ${vehicleName(vehicle)} para hasta ${vehicle.capacity} personas - ${priceText}`;
-    })
-    .join("\n");
+  const orderNumber = createOrderNumber();
+  const orderSummaryText = getOrderSummaryText(form, summary);
+  const vehicleOrderDetails = getVehicleOrderDetails(form);
+  const translatorSelection = translationSummaryText(summary);
 
   const message = [
+    `ORDEN # ${orderNumber}`,
+    "",
     t("emailGreeting"),
     "",
-    `Tour: ${tour[currentLanguage].name}`,
-    `${t("date")}: ${form.elements.date.value}`,
-    `${t("time")}: ${form.elements.time.value}`,
-    `${t("people")}: ${form.elements.people.value}`,
+    "DATOS COMPLETOS DE LA ORDEN",
+    "",
+    `${t("orderTour")}: ${tour[currentLanguage].name}`,
+    `Descripción: ${tour[currentLanguage].description}`,
+    `${t("date")}: ${fieldValue(form.elements.date.value, "No seleccionado")}`,
+    `${t("time")}: ${fieldValue(form.elements.time.value, "No seleccionado")}`,
+    `${t("people")}: ${fieldValue(form.elements.people.value, "No seleccionado")}`,
     "",
     `${t("vehicles")}:`,
-    vehicleLines,
+    vehicleOrderDetails,
     "",
-    `${t("totalCapacity")}: ${summary.capacity}`,
+    `${t("responsible")}: ${fieldValue(form.elements.name.value, "No ingresado")}`,
+    `${t("phone")}: ${fieldValue(form.elements.phone.value, "No ingresado")}`,
+    `${t("email")}: ${fieldValue(form.elements.email.value, "No ingresado")}`,
+    "",
+    `${t("translatorTitle")}:`,
+    t("translatorQuestion"),
+    t("translatorQuestionFinal"),
+    `${t("translatorOption")}: ${translatorSelection}`,
+    "",
+    "RESUMEN DE LA ORDEN",
+    orderSummaryText,
+    "",
+    `Subtotal tour: ${formatPrice(summary.basePrice)}`,
+    `${t("translatorFee")}: ${formatPrice(summary.translatorFee)}`,
     `${t("estimatedTotal")}: ${formatPrice(summary.totalPrice)}`,
     "",
     t("nextStep"),
     "",
-    `${t("responsible")}: ${form.elements.name.value}`,
-    `${t("phone")}: ${form.elements.phone.value}`,
-    `${t("email")}: ${form.elements.email.value}`
+    `Contacto Ratatouille Xtreme Tours: 7883 0399`,
+    `Contacto adicional: ${SECONDARY_PHONE}`
   ].join("\n");
 
-  const subject = encodeURIComponent(t("emailSubject"));
+  const subject = encodeURIComponent(`${t("emailSubject")} - ${orderNumber}`);
   const body = encodeURIComponent(message);
   window.location.href = `mailto:${RESERVATION_EMAIL}?subject=${subject}&body=${body}`;
 }
