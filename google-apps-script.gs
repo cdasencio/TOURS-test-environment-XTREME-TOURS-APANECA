@@ -5,11 +5,13 @@ function doPost(e) {
     const data = JSON.parse(e.postData.contents || "{}");
     const subject = data.subject || "Orden de reserva - Ratatouille Xtreme Tours";
     const message = data.message || "Orden recibida sin detalle.";
+    const emailHtml = data.emailHtml || "";
 
     MailApp.sendEmail({
       to: RESERVATION_EMAIL,
       subject: subject,
       body: message,
+      htmlBody: emailHtml || message.replace(/\n/g, "<br>"),
       name: "Ratatouille Xtreme Tours"
     });
 

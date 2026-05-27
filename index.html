@@ -78,18 +78,27 @@ input[type="date"],input[type="time"]{color-scheme:dark}
 .translator-box{margin-top:20px;background:linear-gradient(135deg,rgba(255,208,0,.10),rgba(14,165,255,.08));border:1px solid rgba(255,208,0,.28);border-radius:24px;padding:22px}
 .translator-title{color:#ffd000;font-size:15px;font-weight:900;text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px}
 .translator-copy{color:#d7e7f4;line-height:1.7;font-size:14px;margin-bottom:16px}
-.summary-box{margin-top:20px;border-radius:22px;background:rgba(14,165,255,.08);border:1px solid rgba(14,165,255,.22);padding:18px;display:grid;grid-template-columns:1fr 1fr;gap:12px;color:#d7e7f4}
-.summary-box strong{color:white}
-.summary-heading{grid-column:1/-1;color:white;font-size:16px;font-weight:900;text-transform:uppercase;letter-spacing:.8px}
-.order-summary-list{grid-column:1/-1;list-style:none;display:grid;gap:8px;margin:2px 0 4px}
-.order-summary-list li{display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:8px;color:#b8cadb;font-size:13px;line-height:1.45}
-.order-summary-list li:last-child{border-bottom:none;padding-bottom:0}
-.order-summary-list span:first-child{font-weight:900;color:#8ea7c2;text-transform:uppercase;letter-spacing:.6px}
-.order-summary-list span:last-child{text-align:right;color:#eef8ff;font-weight:800}
-.summary-note{grid-column:1/-1;color:#b8cadb;font-size:13px;line-height:1.6}
-.summary-total{grid-column:1/-1;margin-top:4px;padding-top:14px;border-top:1px solid rgba(255,255,255,.10);font-size:18px;font-weight:900;color:white}
-.summary-total strong{color:#ffd000;font-size:24px}
-.summary-warning{grid-column:1/-1;color:#ffd000;font-size:13px;font-weight:800;display:none}
+.summary-box{margin-top:20px;border-radius:18px;background:#f8fafc;color:#101827;border:1px solid rgba(255,255,255,.16);padding:0;overflow:hidden;box-shadow:0 18px 34px rgba(0,0,0,.30)}
+.summary-pass-head{display:grid;grid-template-columns:1fr 150px;gap:18px;align-items:start;padding:22px 22px 18px;background:white}
+.summary-brand{display:block;color:#b49a5b;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.summary-heading{display:block;color:#101827;font-size:26px;font-weight:900;line-height:1.05;text-transform:uppercase;letter-spacing:0}
+.summary-order-code{margin-top:8px;color:#64748b;font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase}
+.summary-barcode{height:54px;border-radius:4px;background:repeating-linear-gradient(90deg,#111827 0 3px,transparent 3px 6px,#111827 6px 8px,transparent 8px 13px,#111827 13px 17px,transparent 17px 20px);opacity:.95}
+.summary-section-title{background:#b49a5b;color:white;font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:1px;padding:9px 22px}
+.order-summary-list{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:18px 20px;margin:0;padding:18px 22px;background:white}
+.order-summary-list li{min-width:0}
+.order-summary-list span:first-child{display:block;color:#b49a5b;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px}
+.order-summary-list span:last-child{display:block;color:#101827;font-size:18px;font-weight:900;line-height:1.25;word-break:break-word}
+.order-summary-list li.is-wide{grid-column:1/-1}
+.order-summary-list li.is-wide span:last-child{font-size:14px;line-height:1.55}
+.summary-price-panel{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:16px;padding:18px 22px;background:#f8fafc}
+.summary-price-item span{display:block;color:#b49a5b;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px}
+.summary-price-item strong{display:block;color:#101827;font-size:20px;font-weight:900}
+.summary-price-item.total{border-left:1px solid rgba(180,154,91,.35);padding-left:18px}
+.summary-price-item.total strong{color:#0f172a;font-size:30px}
+.summary-note{color:#475569;font-size:13px;line-height:1.6;padding:0 22px 18px;background:#f8fafc}
+.summary-send-note{color:#0f172a;font-size:13px;font-weight:800;line-height:1.6;padding:16px 22px;background:#fff7d6;border-top:1px solid rgba(180,154,91,.35)}
+.summary-warning{color:#b45309;font-size:13px;font-weight:900;display:none;padding:0 22px 18px;background:#fff7d6}
 .summary-warning.is-visible{display:block}
 .reserve-btn{width:100%;min-height:68px;margin-top:24px;border:none;border-radius:22px;background:linear-gradient(135deg,#ff0059,#ff3b71);color:white;font-size:18px;font-weight:900;letter-spacing:1px;cursor:pointer;transition:.3s;box-shadow:0 18px 35px rgba(255,0,89,.30)}
 .reserve-btn:hover{transform:translateY(-3px)}
@@ -132,7 +141,7 @@ input[type="date"],input[type="time"]{color-scheme:dark}
 .whatsapp-float{position:fixed;right:24px;bottom:24px;width:64px;height:64px;border-radius:50%;background:#22c55e;color:white;display:flex;justify-content:center;align-items:center;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.35);z-index:200}
 .whatsapp-float svg{width:34px;height:34px}
 @media(max-width:1100px){.tour-grid,.feature-strip{grid-template-columns:1fr}.client-info{grid-template-columns:1fr}.nav-center-bar{grid-template-columns:repeat(3,1fr);width:calc(100% - 32px);padding:18px}.image-gallery{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:850px){header{flex-direction:column;gap:18px;padding:22px}.header-left,.contact-panel,.nav{justify-content:center}.nav{flex-wrap:wrap}.form-grid,.vehicle-list,.summary-box{grid-template-columns:1fr}}
+@media(max-width:850px){header{flex-direction:column;gap:18px;padding:22px}.header-left,.contact-panel,.nav{justify-content:center}.nav{flex-wrap:wrap}.form-grid,.vehicle-list{grid-template-columns:1fr}.summary-pass-head,.summary-price-panel{grid-template-columns:1fr}.order-summary-list{grid-template-columns:1fr}.summary-price-item.total{border-left:none;border-top:1px solid rgba(180,154,91,.35);padding-left:0;padding-top:14px}}
 @media(max-width:560px){.nav-center-bar{grid-template-columns:1fr 1fr;border-radius:24px}.nav-center-bar a{font-size:13px;padding:14px 10px}.image-gallery{grid-template-columns:1fr}.image-gallery img,.restaurant-gallery img{height:230px}}
 @media(max-width:520px){.promo-bar{font-size:14px}.logo-btn{width:100%;text-align:center}.booking-panel{padding:20px}.tour-card{padding:20px}.vehicle-row{grid-template-columns:1fr}.section-title{font-size:30px}.hero h1{font-size:38px}.content-section{padding:26px}}
 
@@ -317,7 +326,7 @@ input[type="date"],input[type="time"]{color-scheme:dark}
 const WHATSAPP_NUMBER = "50378830399";
 const RESERVATION_EMAIL = "ratatouillextremetours@gmail.com";
 const SECONDARY_PHONE = "7255 8194";
-const GOOGLE_SCRIPT_URL = "";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby2TCg7vQmanG03F2y2x2wuzRadfWDwfUMDShSOVLzpBZZgfyypRpeoy_ykmeu_Wf1U/exec";
 
 const vehicleOptions = [
   { id: "atv1", esName: "Cuatrimoto sencilla", enName: "Single ATV", capacity: 1, maxUnits: 8, lagunaPrice: 30 },
@@ -421,6 +430,7 @@ const translations = {
     orderVehicles: "Vehículos",
     orderCapacity: "Capacidad cubierta",
     orderTranslation: "Traducción",
+    orderSubtotal: "Subtotal tour",
     noVehiclesSelected: "Selecciona las unidades del vehículo para completar la orden",
     totalCapacity: "Capacidad total seleccionada",
     tourPrice: "Precio del tour",
@@ -428,6 +438,7 @@ const translations = {
     ausolesPersonPriceNote: "Ruta Extrema (Ausoles Tour): $100 por persona.",
     lagunaVehiclePriceNote: "Tour Laguna Verde: precio según vehículo seleccionado.",
     nextStep: "Enviaremos tu orden para confirmar disponibilidad y luego recibirás el link de pago.",
+    whatsappSendReminder: "Si se abre WhatsApp como respaldo, revisa la orden cargada y presiona Enviar para que la reserva llegue correctamente.",
     warning: "Selecciona vehículos suficientes para cubrir la cantidad de personas.",
     reserveNow: "ENVIAR ORDEN DE RESERVA",
     featureRoutesTitle: "Rutas naturales",
@@ -468,7 +479,7 @@ const translations = {
     emailGreeting: "Nueva orden de reserva generada desde la página web.",
     sendingOrder: "Enviando orden...",
     orderSent: "Orden enviada correctamente. Te enviaremos confirmación y link de pago.",
-    whatsappFallback: "Abriremos WhatsApp con tu orden lista para enviar."
+    whatsappFallback: "No se pudo enviar directo a Gmail. Abriremos WhatsApp con tu orden lista: presiona Enviar para completar la reserva."
   },
   en: {
     promo: "ADVENTURE DEALS: BOOK YOUR TOUR IN APANECA",
@@ -528,6 +539,7 @@ const translations = {
     orderVehicles: "Vehicles",
     orderCapacity: "Covered capacity",
     orderTranslation: "Translation",
+    orderSubtotal: "Tour subtotal",
     noVehiclesSelected: "Select vehicle units to complete the order",
     totalCapacity: "Selected total capacity",
     tourPrice: "Tour price",
@@ -535,6 +547,7 @@ const translations = {
     ausolesPersonPriceNote: "Extreme Route (Ausoles Tour): $100 per person.",
     lagunaVehiclePriceNote: "Laguna Verde Tour: price based on selected vehicle.",
     nextStep: "We will send your order to confirm availability, then you will receive the payment link.",
+    whatsappSendReminder: "If WhatsApp opens as a backup, review the loaded order and press Send so the reservation arrives correctly.",
     warning: "Select enough vehicles to cover the number of guests.",
     reserveNow: "SEND BOOKING ORDER",
     featureRoutesTitle: "Natural routes",
@@ -575,7 +588,7 @@ const translations = {
     emailGreeting: "New booking order generated from the website.",
     sendingOrder: "Sending order...",
     orderSent: "Order sent successfully. We will send confirmation and the payment link.",
-    whatsappFallback: "We will open WhatsApp with your order ready to send."
+    whatsappFallback: "Direct Gmail delivery is not available. We will open WhatsApp with your order ready: press Send to complete the reservation."
   }
 };
 
@@ -687,11 +700,24 @@ function buildBookingCards() {
           </div>
         </div>
         <div class="summary-box">
-          <div class="summary-heading">${t("orderSummary")}</div>
+          <div class="summary-pass-head">
+            <div>
+              <span class="summary-brand">RATATOUILLE APANECA</span>
+              <strong class="summary-heading">${t("orderSummary")}</strong>
+              <div class="summary-order-code">RXT WEB ORDER</div>
+            </div>
+            <div class="summary-barcode" aria-hidden="true"></div>
+          </div>
+          <div class="summary-section-title">${t("bookingTitle")}</div>
           <ul class="order-summary-list" data-order-summary></ul>
+          <div class="summary-section-title">${t("tourPrice")}</div>
+          <div class="summary-price-panel">
+            <div class="summary-price-item"><span>${t("orderSubtotal")}</span><strong data-summary-subtotal>$0</strong></div>
+            <div class="summary-price-item"><span>${t("translatorFee")}</span><strong data-summary-translator>$0</strong></div>
+            <div class="summary-price-item total"><span>${t("estimatedTotal")}</span><strong data-summary-price>$0</strong></div>
+          </div>
           <p class="summary-note">${tour.id === "ausoles" ? t("ausolesPersonPriceNote") : t("lagunaVehiclePriceNote")}</p>
-          <p class="summary-note">${t("nextStep")}</p>
-          <span class="summary-total">${t("estimatedTotal")}: <strong data-summary-price>$0</strong></span>
+          <p class="summary-send-note">${t("nextStep")}</p>
           <p class="summary-warning" data-summary-warning>${t("warning")}</p>
         </div>
         <button type="submit" class="reserve-btn">${t("reserveNow")}</button>
@@ -754,10 +780,67 @@ function getOrderSummaryRows(form, summary) {
   ];
 }
 
+function summaryRowClass(label) {
+  return label === t("orderVehicles") || label === t("orderTranslation") ? " class=\"is-wide\"" : "";
+}
+
 function getOrderSummaryText(form, summary) {
   return getOrderSummaryRows(form, summary)
     .map(([label, value]) => `${label}: ${value}`)
     .join("\n");
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+function buildOrderEmailHtml(form, summary, orderNumber) {
+  const tour = tours.find((item) => item.id === form.dataset.tourId);
+  const rows = getOrderSummaryRows(form, summary)
+    .map(([label, value]) => `
+      <div style="padding:10px 0;">
+        <div style="font-size:11px;font-weight:900;color:#b49a5b;text-transform:uppercase;letter-spacing:.8px;">${escapeHtml(label)}</div>
+        <div style="font-size:18px;font-weight:900;color:#111827;line-height:1.35;">${escapeHtml(value)}</div>
+      </div>
+    `).join("");
+
+  return `
+    <div style="font-family:Montserrat,Arial,sans-serif;background:#f1f5f9;padding:24px;color:#111827;">
+      <div style="max-width:760px;margin:auto;background:white;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;">
+        <div style="padding:24px 28px 18px;">
+          <div style="font-size:12px;font-weight:900;color:#b49a5b;letter-spacing:2px;text-transform:uppercase;">RATATOUILLE APANECA</div>
+          <div style="font-size:34px;font-weight:900;line-height:1.05;text-transform:uppercase;margin-top:4px;">RESUMEN DE LA ORDEN</div>
+          <div style="font-size:13px;font-weight:900;color:#64748b;letter-spacing:1px;text-transform:uppercase;margin-top:8px;">ORDEN # ${escapeHtml(orderNumber)}</div>
+          <div style="height:58px;margin-top:18px;background:repeating-linear-gradient(90deg,#111827 0 3px,transparent 3px 6px,#111827 6px 8px,transparent 8px 13px,#111827 13px 17px,transparent 17px 20px);"></div>
+        </div>
+        <div style="background:#b49a5b;color:white;font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:1px;padding:10px 28px;">DATOS DE RESERVA</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 28px;padding:18px 28px;">
+          ${rows}
+        </div>
+        <div style="background:#b49a5b;color:white;font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:1px;padding:10px 28px;">DATOS DEL CLIENTE</div>
+        <div style="padding:18px 28px;line-height:1.7;font-size:14px;">
+          <strong>${escapeHtml(t("responsible"))}:</strong> ${escapeHtml(fieldValue(form.elements.name.value, "No ingresado"))}<br>
+          <strong>${escapeHtml(t("phone"))}:</strong> ${escapeHtml(fieldValue(form.elements.phone.value, "No ingresado"))}<br>
+          <strong>${escapeHtml(t("email"))}:</strong> ${escapeHtml(fieldValue(form.elements.email.value, "No ingresado"))}<br>
+          <strong>${escapeHtml(t("date"))}:</strong> ${escapeHtml(fieldValue(form.elements.date.value, "No seleccionado"))}<br>
+          <strong>${escapeHtml(t("time"))}:</strong> ${escapeHtml(fieldValue(form.elements.time.value, "No seleccionado"))}
+        </div>
+        <div style="background:#f8fafc;padding:18px 28px;border-top:1px solid #e2e8f0;">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:16px;">
+            <div><div style="font-size:11px;font-weight:900;color:#b49a5b;text-transform:uppercase;">${escapeHtml(t("orderSubtotal"))}</div><strong style="font-size:20px;">${escapeHtml(formatPrice(summary.basePrice))}</strong></div>
+            <div><div style="font-size:11px;font-weight:900;color:#b49a5b;text-transform:uppercase;">${escapeHtml(t("translatorFee"))}</div><strong style="font-size:20px;">${escapeHtml(formatPrice(summary.translatorFee))}</strong></div>
+            <div><div style="font-size:11px;font-weight:900;color:#b49a5b;text-transform:uppercase;">${escapeHtml(t("estimatedTotal"))}</div><strong style="font-size:30px;">${escapeHtml(formatPrice(summary.totalPrice))}</strong></div>
+          </div>
+          <p style="margin:18px 0 0;color:#475569;font-size:13px;line-height:1.6;">${escapeHtml(t("nextStep"))}</p>
+        </div>
+      </div>
+    </div>
+  `;
 }
 
 function getVehicleOrderDetails(form) {
@@ -809,8 +892,10 @@ function updateSummary(form) {
   const summary = getFormSummary(form);
   const orderList = form.querySelector("[data-order-summary]");
   orderList.innerHTML = getOrderSummaryRows(form, summary)
-    .map(([label, value]) => `<li><span>${label}</span><span>${value}</span></li>`)
+    .map(([label, value]) => `<li${summaryRowClass(label)}><span>${label}</span><span>${value}</span></li>`)
     .join("");
+  form.querySelector("[data-summary-subtotal]").textContent = formatPrice(summary.basePrice);
+  form.querySelector("[data-summary-translator]").textContent = formatPrice(summary.translatorFee);
   form.querySelector("[data-summary-price]").textContent = formatPrice(summary.totalPrice);
   form.querySelector("[data-summary-warning]").classList.toggle("is-visible", summary.people > 0 && summary.capacity < summary.people);
 }
@@ -841,6 +926,7 @@ async function handleBookingSubmit(event) {
   const orderSummaryText = getOrderSummaryText(form, summary);
   const vehicleOrderDetails = getVehicleOrderDetails(form);
   const translatorSelection = translationSummaryText(summary);
+  const emailHtml = buildOrderEmailHtml(form, summary, orderNumber);
 
   const message = [
     `ORDEN # ${orderNumber}`,
@@ -850,7 +936,6 @@ async function handleBookingSubmit(event) {
     "DATOS COMPLETOS DE LA ORDEN",
     "",
     `${t("orderTour")}: ${tour[currentLanguage].name}`,
-    `Descripción: ${tour[currentLanguage].description}`,
     `${t("date")}: ${fieldValue(form.elements.date.value, "No seleccionado")}`,
     `${t("time")}: ${fieldValue(form.elements.time.value, "No seleccionado")}`,
     `${t("people")}: ${fieldValue(form.elements.people.value, "No seleccionado")}`,
@@ -862,9 +947,6 @@ async function handleBookingSubmit(event) {
     `${t("phone")}: ${fieldValue(form.elements.phone.value, "No ingresado")}`,
     `${t("email")}: ${fieldValue(form.elements.email.value, "No ingresado")}`,
     "",
-    `${t("translatorTitle")}:`,
-    t("translatorQuestion"),
-    t("translatorQuestionFinal"),
     `${t("translatorOption")}: ${translatorSelection}`,
     "",
     "RESUMEN DE LA ORDEN",
@@ -875,6 +957,7 @@ async function handleBookingSubmit(event) {
     `${t("estimatedTotal")}: ${formatPrice(summary.totalPrice)}`,
     "",
     t("nextStep"),
+    t("whatsappSendReminder"),
     "",
     `Contacto Ratatouille Xtreme Tours: 7883 0399`,
     `Contacto adicional: ${SECONDARY_PHONE}`
@@ -884,6 +967,7 @@ async function handleBookingSubmit(event) {
     orderNumber,
     subject: `${t("emailSubject")} - ${orderNumber}`,
     message,
+    emailHtml,
     customerName: form.elements.name.value,
     customerPhone: form.elements.phone.value,
     customerEmail: form.elements.email.value,
